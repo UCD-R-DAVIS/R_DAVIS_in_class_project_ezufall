@@ -1,23 +1,11 @@
 
-
-
-
-
-
-
-
-
 #Introduction to R: arithmetic
 
 3 + 4
 
 
-
-
-
-
 #incomplete command
-2 * 5
+2 * 
 
 
 
@@ -43,13 +31,9 @@ sqrt(4)
 
 #r help files
 ?log
-log(2, 4)
-log(4, 2)
-log(base = 4, x = 2)
 
-x <- 1
-x
-rm(x)
+
+
 #note:
 #?? searches the text of all R help files, e.g. ??base will find log.
 #other places to check out:
@@ -61,6 +45,16 @@ rm(x)
 #arguments to functions
 
 
+log(2, 4)
+log(4, 2)
+log(base = 4, x = 2)
+
+#x is still 1!
+x <- 1
+log(base = 4, x = 2)
+x
+#x is a confusing name. let's get rid of this
+rm(x)
 
 #nested functions
 sqrt(exp(4))
@@ -95,7 +89,7 @@ num_samples <- 40
 rm(num_samples)
 ls()
 #tab completion
-rm(list = ls())
+num_samples
 
 #errors and warnings
 log_of_word <- log("a_word")
@@ -103,6 +97,7 @@ log_of_word
 
 log_of_negative <- log(-2)
 log_of_negative
+
 #challenge
 elephant1_kg <- 3492
 elephant2_lb <- 7757
