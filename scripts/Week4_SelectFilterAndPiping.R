@@ -22,7 +22,7 @@ library(tidyverse)
 surveys <- read_csv("data/portal_data_joined.csv")
 
 
-
+str(surveys)
 
 
 
@@ -36,12 +36,17 @@ surveys <- read_csv("data/portal_data_joined.csv")
 month_day_year <- select(surveys, month, day, year)
 
 #filtering by equals
-filter(surveys, year == 1981)
+year_1981 <- filter(surveys, year == 1981)
 
 #filtering by range
 filter(surveys, year %in% c(1981:1983))
+#5033 results
+
+
 #review: why should you NEVER do:
 filter(surveys, year == c(1981, 1982, 1983))
+#1685 results
+
 #This recycles the vector 
 #(index-matching, not bucket-matching)
 #If you ever really need to do that for some reason,
@@ -68,7 +73,10 @@ small_animal_ids <- select(filter(surveys, weight < 5), record_id, plot_id, spec
 small_animal_ids <- filter(surveys, weight < 5) %>% select(record_id, plot_id, species_id)
 
 #same as
-small_animal_ids <- surveys %>% filter(weight < 5) %>% select(record_id, plot_id, species_id)
+small_animal_ids <- surveys %>% filter(
+  weight < 5) %>% 
+  select(record_id, 
+         plot_id, species_id)
 
 #how to do line breaks with pipes
 surveys %>% filter(month==1)
@@ -78,7 +86,7 @@ surveys %>%
   filter(month==1)
 
 #not good:
-surveys
+surveys 
 %>% filter(month==1)
 #what happened here?
 
