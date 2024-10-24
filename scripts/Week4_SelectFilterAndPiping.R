@@ -103,5 +103,34 @@ surveys
 #and visiting the code demos on my repository
 
 
+#one final review of an important concept we learned last week
+#applied to the tidyverse
+
+mini <- surveys[190:209,]
+table(mini$species_id)
+#how many rows have a species ID that's either DM or NL?
+nrow(mini)
 
 
+
+
+
+
+danger <- mini %>% filter(species_id == c("DM","NL"))
+
+nrow(danger)
+
+
+
+
+
+
+
+#why is nrow(danger) != nrow(mini) if those are the only two species??
+
+
+
+
+
+tada <- mini[mini$species_id %in% c("DM","NL"),]
+nrow(tada)
