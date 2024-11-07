@@ -121,9 +121,13 @@ ggplot(diamonds, aes(x= cut, y= carat, color = color)) +
 #here's how it looks on a barplot
 ggplot(diamonds, aes(x = clarity, fill = cut)) + 
   geom_bar() +
-  theme(axis.text.x = element_text(angle=70, vjust=0.5)) +
-  scale_fill_viridis_d("cut", option = "B") +
-  theme_classic()
+  ggtitle("Clarity of Diamonds") +
+  theme_classic() +
+  theme(axis.text.x = element_text(angle=70, vjust=0.5),
+        plot.title = element_text(hjust = 0.5)) +
+  
+  scale_fill_viridis_d("cut", option = "B") 
+  
 
 #from RColorBrewer:
 ggplot(diamonds, aes(x= cut, y= carat, fill = color)) +
