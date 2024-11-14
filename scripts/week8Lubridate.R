@@ -215,12 +215,12 @@ library(dplyr)
 library(readr)
 
 # read in some data and skip header lines
-mloa1 <- read_csv("https://raw.githubusercontent.com/ucd-cepb/R-DAVIS/master/data/mauna_loa_met_2001_minute.csv")
+mloa1 <- read_csv("https://raw.githubusercontent.com/UCD-R-DAVIS/R-DAVIS/main/data/mauna_loa_met_2001_minute.csv")
 head(mloa1) #R tried to guess for you that 
 #the year, month, day, and hour columns were numbers
 
 # import raw dataset & specify column types
-mloa2 <- read_csv("https://raw.githubusercontent.com/ucd-cepb/R-DAVIS/master/data/mauna_loa_met_2001_minute.csv",
+mloa2 <- read_csv("https://raw.githubusercontent.com/UCD-R-DAVIS/R-DAVIS/main/data/mauna_loa_met_2001_minute.csv",
                   col_types = "cccccccddddddddd")
 
 #notice the difference in the data types of these two objects:
